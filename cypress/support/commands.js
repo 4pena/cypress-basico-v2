@@ -162,3 +162,67 @@ Cypress.Commands.add('MAN_Filtro_Editar_Loja159', function () {
     cy.get('#EXEC_FILTRO').click()
     cy.get('#loja_alterar').click()
 })
+
+Cypress.Commands.add('PDV_Acessar_PDV2', function () {
+
+    cy.visit('http://10.245.0.12:9092/Interface/index.html')
+    cy.wait(5000)
+    cy.get('#button-1014-btnInnerEl').click()
+    cy.get('#campoinput-1775-inputEl').type('10.245.0.12')
+    cy.get('#campoinput-1776-inputEl').type('8892')
+    cy.get('#teclaentrar-1780-btnInnerEl').click()
+})
+
+Cypress.Commands.add('PDV_Acessar_PDV3', function () {
+
+    cy.visit('http://10.245.0.12:9093/Interface/index.html')
+    cy.wait(5000)
+    cy.get('#button-1014-btnInnerEl').click()
+    cy.get('#campoinput-1775-inputEl').type('10.245.0.12')
+    cy.get('#campoinput-1776-inputEl').type('8893')
+    cy.get('#teclaentrar-1780-btnInnerEl').click()
+})
+
+Cypress.Commands.add('PDV_Acessar_PDV4', function () {
+
+    cy.visit('http://10.245.0.12:9094/Interface/index.html')
+    cy.wait(5000)
+    cy.get('#button-1014-btnInnerEl').click()
+    cy.get('#campoinput-1775-inputEl').type('10.245.0.12')
+    cy.get('#campoinput-1776-inputEl').type('8894')
+    cy.get('#teclaentrar-1780-btnInnerEl').click()
+})
+
+Cypress.Commands.add('PDV_Acessar_PDV5', function () {
+
+    cy.visit('http://10.245.0.12:9095/Interface/index.html')
+    cy.wait(5000)
+    cy.get('#button-1014-btnInnerEl').click()
+    cy.get('#campoinput-1775-inputEl').type('10.245.0.12')
+    cy.get('#campoinput-1776-inputEl').type('8895')
+    cy.get('#teclaentrar-1780-btnInnerEl').click()
+})
+
+Cypress.Commands.add('PDV_Saida_Operador', function () {
+
+    
+    
+})
+
+Cypress.Commands.add('PDV_Reducao_Z', function () {
+
+    
+    
+})
+
+Cypress.Commands.add('PDV_Entrada_Operador', function () {
+
+    
+    
+})
+
+Cypress.Commands.add('PDV_Abertura_Caixa', function () {
+
+    
+    
+})
