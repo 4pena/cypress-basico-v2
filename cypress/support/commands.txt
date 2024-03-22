@@ -23,7 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-require('cypress-xpath');
 Cypress.Commands.add('teste', function () {
         
     cy.get('#firstName')
@@ -202,28 +201,4 @@ Cypress.Commands.add('PDV_Acessar_PDV5', function () {
     cy.get('#campoinput-1775-inputEl').type('10.245.0.12')
     cy.get('#campoinput-1776-inputEl').type('8895')
     cy.get('#teclaentrar-1780-btnInnerEl').click()
-})
-
-Cypress.Commands.add('PDV_Saida_Operador', function () {
-
-    
-    
-})
-
-Cypress.Commands.add('PDV_Reducao_Z', function () {
-
-    
-    
-})
-
-Cypress.Commands.add('PDV_Entrada_Operador', function () {
-
-    
-    
-})
-
-Cypress.Commands.add('PDV_Abertura_Caixa', function () {
-
-    
-    
 })
