@@ -4,7 +4,7 @@ it('Venda PDV 5', function() {
     cy.get('#campoinput-1260-inputEl').type('1005')
     cy.get('#campoinput-1260-inputEl').type('{enter}')
     cy.wait(2000)
-    cy.get('body').type('{enter}');
+    cy.get('body').type('{enter}')
     cy.wait(2000)
     cy.get('#teclafinalizar-1231-btnIconEl').click()
     cy.wait(2000)
