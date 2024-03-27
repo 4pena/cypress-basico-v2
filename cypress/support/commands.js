@@ -223,15 +223,3 @@ Cypress.Commands.add('PDV_Acessar_PDV7', function () {
     cy.get('#campoinput-1776-inputEl').type('8897')
     cy.get('#teclaentrar-1780-btnInnerEl').click()
 })
-
-data.forEach((item)  => {
-Cypress.Commands.add('PDV_Acessar_PDV2_TESTE', function () {
-
-    cy.visit('item.URL_INTERFACE_WEB')
-    cy.wait(5000)
-    cy.get('#button-1014-btnInnerEl').click()
-    cy.get('#campoinput-1775-inputEl').type('item.IP_PDV')
-    cy.get('#campoinput-1776-inputEl').type('item.PORTA_PDV')
-    cy.get('#teclaentrar-1780-btnInnerEl').click()
-})
-})
