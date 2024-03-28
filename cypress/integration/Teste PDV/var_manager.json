@@ -1,0 +1,17 @@
+[
+  {
+    "URL_INTERFACE_MANAGER": "http://10.245.0.32/manager/login.php5",
+    "USUARIO": "1",
+    "SENHA": "654321"
+  },
+  {
+    "URL_INTERFACE_MANAGER": "http://10.245.0.32/manager/login.php5",
+    "USUARIO": "43",
+    "SENHA": "654321"
+  },
+  {
+    "URL_INTERFACE_MANAGER": "http://10.245.0.32/manager/login.php5",
+    "USUARIO": "159",
+    "SENHA": "654321"
+  },
+]

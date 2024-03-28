@@ -20,8 +20,34 @@ var_pdv.forEach((var_pdv, index)  => {
             .should('have.value', '151')
         cy.get('#teclafuncao-1230-btnEl')
             .click()
-        cy.contains('FUNCIONÁRIO:')
-            .should('be.visible')  
+            function esperarElementoComTextoEsperado() {
+                const textoEsperado = 'FUNCIONÁRIO:';
+                const timeout = 10000; // Tempo limite em milissegundos (10 segundos neste exemplo)
+                const endTime = Date.now() + timeout; // Calcula o tempo final baseado no tempo atual e no tempo limite
+              
+                return new Cypress.Promise(resolve => {
+                  const checkElement = () => {
+                    cy.contains(textoEsperado).should('be.visible').then(() => {
+                      // Se o texto esperado for encontrado e for visível, exiba uma mensagem de sucesso
+                      cy.log(`Sucesso! O texto "${textoEsperado}" foi encontrado e está visível.`);
+                      resolve(); // Resolve a promessa
+                    }).catch(() => {
+                      // Se o texto esperado não for encontrado ou não for visível
+                      if (Date.now() > endTime) {
+                        // Se o tempo limite for atingido sem encontrar o texto esperado, falhe o teste
+                        throw new Error(`Texto "${textoEsperado}" não foi encontrado ou não está visível dentro do tempo limite`);
+                      } else {
+                        cy.wait(100); // Espera por 100 milissegundos antes de verificar novamente
+                        checkElement(); // Verifica o elemento novamente
+                      }
+                    });
+                  };
+              
+                  checkElement(); // Inicia a verificação do elemento
+                });
+              }
+              
+              esperarElementoComTextoEsperado(); 
         cy.get('body')
             .type(var_pdv.USUARIO)
         cy.xpath("/html/body/div[9]/div[2]/div/div/div[1]/div/div/table/tbody/tr[2]/td/input")
