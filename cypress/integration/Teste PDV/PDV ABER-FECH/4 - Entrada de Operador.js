@@ -1,4 +1,4 @@
-const var_pdv = require('./var_pdv.json');
+const var_pdv = require('../../../fixtures/var_pdv.json');
 
 var_pdv.forEach((var_pdv, index)  => {
     const pdvNumber = index + 2; // Calcula o número do PDV

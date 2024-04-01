@@ -1,7 +1,16 @@
-const var_pdv = require('./var_pdv.json');
+const pdvData = require('./var_pdv.json');
 
-var_pdv.forEach((var_pdv, index)  => {
-    const pdvNumber = index + 2; // Calcula o número do PDV
+pdvData.forEach((pdv, index) => {
+    const basePort = parseInt(pdv.basePORTA); // Base da porta
+
+    pdv.endpoints.forEach(endpoint => {
+        const pdvNumber = parseInt(endpoint.port); // Número do PDV
+        const port = `${basePort}${pdvNumber}`; // Calcula a porta do PDV corretamente
+        const USUARIO = endpoint.usuario; // Ajusta para 'usuario' conforme no JSON
+        const SENHA = pdv.senha; // Utiliza a senha fixa do JSON
+        const serverName = pdv.server; // Nome do servidor
+        it(`${serverName} - Abertura de Caixa - PDV ${pdvNumber}`, function() {
+            const url = `${pdv.baseURL}${pdvNumber}/Interface/index.html`;
 
     it(`Abertura de Caixa - PDV ${pdvNumber}`, function() { // Usa o número do PDV no título do teste
         cy.visit(var_pdv.URL_INTERFACE_WEB);
@@ -15,11 +24,14 @@ var_pdv.forEach((var_pdv, index)  => {
         cy.get('#teclaentrar-1780-btnInnerEl')
             .click();
 
+        cy.get('body')
+            .type('{esc}')
         cy.get('#campoinput-1260-inputEl')
             .type('151')
             .should('have.value', '151')
         cy.get('#teclafuncao-1230-btnEl')
             .click()
+        cy.wait(5000)
         cy.contains('FUNCIONÁRIO:')
             .should('be.visible')  
         cy.get('body')
@@ -42,9 +54,9 @@ var_pdv.forEach((var_pdv, index)  => {
             .should('be.visible')
         cy.get('body')
             .type('{enter}')
-        function esperarElementoComTextoEsperado() {
+            function esperarElementoComTextoEsperado() {
                 const valorEsperado = 'Sem operador'; // Definindo o valor esperado como uma variável
-                const timeout = 20000; // Tempo limite em milissegundos (10 segundos neste exemplo)
+                const timeout = 60000; // Tempo limite em milissegundos (10 segundos neste exemplo)
                 const endTime = Date.now() + timeout; // Calcula o tempo final baseado no tempo atual eno tempo limite
                   
                 return new Cypress.Promise(resolve => {
@@ -69,6 +81,7 @@ var_pdv.forEach((var_pdv, index)  => {
                 }
                   
                 esperarElementoComTextoEsperado()
-                  
+            });      
+        });
     });
 });

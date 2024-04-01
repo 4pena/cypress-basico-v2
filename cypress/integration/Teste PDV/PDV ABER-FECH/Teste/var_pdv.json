@@ -1,0 +1,47 @@
+[
+  {
+    "baseURL": "http://10.245.0.12:909",
+    "baseIP": "10.245.0.12",
+    "basePORTA": "889",
+    "senha": "123456",
+    "server": "Servidor 1 ORA",
+    "endpoints": [
+      { "port": "2", "usuario": "1" },
+      { "port": "3", "usuario": "1" },
+      { "port": "4", "usuario": "43" },
+      { "port": "5", "usuario": "159" },
+      { "port": "6", "usuario": "138" },
+      { "port": "7", "usuario": "138" }
+    ]
+  },
+  {
+    "baseURL": "http://10.245.0.22:909",
+    "baseIP": "10.245.0.22",
+    "basePORTA": "889",
+    "senha": "123456",
+    "server": "Servidor 2 SQL",
+    "endpoints": [
+      { "port": "2", "usuario": "1" },
+      { "port": "3", "usuario": "1" },
+      { "port": "4", "usuario": "43" },
+      { "port": "5", "usuario": "159" },
+      { "port": "6", "usuario": "138" },
+      { "port": "7", "usuario": "138" }
+    ]
+  },
+  {
+    "baseURL": "http://10.245.0.32:909",
+    "baseIP": "10.245.0.32",
+    "basePORTA": "889",
+    "senha": "123456",
+    "server": "Servidor 3 POST",
+    "endpoints": [
+      { "port": "2", "usuario": "1" },
+      { "port": "3", "usuario": "1" },
+      { "port": "4", "usuario": "43" },
+      { "port": "5", "usuario": "159" },
+      { "port": "6", "usuario": "138" },
+      { "port": "7", "usuario": "138" }
+    ]
+  }
+]

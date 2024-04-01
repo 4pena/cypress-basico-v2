@@ -166,10 +166,10 @@ Cypress.Commands.add('MAN_Filtro_Editar_Loja159', function () {
 
 Cypress.Commands.add('PDV_Acessar_PDV2', function () {
 
-    cy.visit('http://10.245.0.32:9092/Interface/index.html')
+    cy.visit('http://10.245.0.22:9092/Interface/index.html')
     cy.wait(5000)
     cy.get('#button-1014-btnInnerEl').click()
-    cy.get('#campoinput-1775-inputEl').type('10.245.0.32')
+    cy.get('#campoinput-1775-inputEl').type('10.245.0.22')
     cy.get('#campoinput-1776-inputEl').type('8892')
     cy.get('#teclaentrar-1780-btnInnerEl').click()
 })
