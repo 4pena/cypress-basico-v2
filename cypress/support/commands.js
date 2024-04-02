@@ -41,9 +41,25 @@ Cypress.Commands.add('teste', function () {
     
 })
 
-Cypress.Commands.add('MAN_Acessar_Manager', function () {
+Cypress.Commands.add('MAN_Acessar_Manager_Serv1', function () {
 
     cy.visit('http://10.245.0.12/manager/login.php5')
+    cy.get('#USUARIO').type('1')
+    cy.get('#SENHA').type('654321')
+    cy.get('input[type="submit"]').click()
+})
+
+Cypress.Commands.add('MAN_Acessar_Manager_Serv2', function () {
+
+    cy.visit('http://10.245.0.22/manager/login.php5')
+    cy.get('#USUARIO').type('1')
+    cy.get('#SENHA').type('654321')
+    cy.get('input[type="submit"]').click()
+})
+
+Cypress.Commands.add('MAN_Acessar_Manager_Serv3', function () {
+
+    cy.visit('http://10.245.0.32/manager/login.php5')
     cy.get('#USUARIO').type('1')
     cy.get('#SENHA').type('654321')
     cy.get('input[type="submit"]').click()
