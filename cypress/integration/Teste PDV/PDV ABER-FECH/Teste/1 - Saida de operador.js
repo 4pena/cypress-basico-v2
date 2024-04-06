@@ -20,7 +20,7 @@ pdvData.forEach((pdv, index) => {
             cy.get('#teclaentrar-1780-btnInnerEl').click();
 
 
-            cy.get('body')
+            cy.get('#campoinput-1260-inputEl')
                 .type('{esc}')
             cy.wait(1000)
             cy.get('#campoinput-1260-inputEl')
