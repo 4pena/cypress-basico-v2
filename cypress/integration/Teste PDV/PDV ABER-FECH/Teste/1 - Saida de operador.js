@@ -22,6 +22,7 @@ pdvData.forEach((pdv, index) => {
 
             cy.get('body')
                 .type('{esc}')
+            cy.wait(1000)
             cy.get('#campoinput-1260-inputEl')
                 .type('155')
                 .should('have.value', '155');
